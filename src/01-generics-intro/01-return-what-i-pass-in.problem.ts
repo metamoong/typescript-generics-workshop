@@ -1,10 +1,10 @@
 import { Equal, Expect } from "../helpers/type-utils";
 
-const returnWhatIPassIn = (t: unknown) => {
+const returnWhatIPass = <T>(t: T) => {
   return t;
 };
 
-const one = returnWhatIPassIn(1);
-const matt = returnWhatIPassIn("matt");
+const one = returnWhatIPass(1);
+const matt = returnWhatIPass("matt");
 
 type tests = [Expect<Equal<typeof one, 1>>, Expect<Equal<typeof matt, "matt">>];
