@@ -10,7 +10,13 @@ const array = [
   },
 ];
 
-const obj = array.reduce((accum, item) => {
+/*
+typescript의 Record
+Record<Keys,Type>
+-> Keys와 Type을 매핑
+ */
+
+const obj = array.reduce<Record<string, { name: string }>>((accum, item) => {
   accum[item.name] = item;
   return accum;
 }, {});
